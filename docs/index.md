@@ -37,31 +37,19 @@ Was it easy, or surprisingly challenging and why do you think so?
 
 ## Phase 5. Custom Project
 
-Describe your custom project and how you made your modeling decisions.
-
-Be specific about what changed from the example project.
+I chose to use the Iris dataset for my custom project. Having worked with this specific set several times I was familar with the original features and wanted to be able to build upon my work from the last module.
 
 ### Basis and Data
 
-Describe the dataset, input, or example you started with.
+I chose to use the Iris dataset for my custom project. The original dataset includes 4 flower measurements including sepal length, sepal width, petal length and petal width. The 5th original feature is species. There are 150 instances included in the dataset which could be a downside and lead to a generalization of any results or analysis.
 
-Include:
+I also added back in the custom engineered features code from last week which included the following features: petal_ratio: petal_length / petal_width; sepal_ratio: sepal_length / sepal_width; petal_to_sepal_ratio: petal_length / sepal_length; petal_diff: petal_length - petal_width; petal_area: petal_length * petal_width; and petal_size: a size class for petal_length.
 
-- The original example dataset or input
-- The data source
-- Why you chose it, kept it, or changed it
-- Any important limitations or assumptions
+This dataset would fit nicely in to the base code keeping the target feature species.
 
 ### Modeling Approach
 
-Describe the problem type and modeling approach for this project.
-
-Include:
-
-- Is this supervised or unsupervised and how do you know
-- Is this classification, regression, clustering, recommendation, forecasting, or another type of ML task
-- What kind of target works well for this approach
-- Why your selected model or method is appropriate
+The project is a supervised machine learning problem because of the chosen target variable, species. It is a classification problem because the target is 3 categories; setosa, versicolor and viriginica. This is appropriate because the target is a category instead of a numerical value. The model will be working to learn the relationship between flower measurements and their species labels.
 
 ### Target
 
@@ -71,13 +59,22 @@ Then describe your chosen target variable.
 
 Explain how your target choice changes the modeling approach, interpretation, or evaluation.
 
+My custom project target feature was species, a discrete category resulting in classification problem.
+
+
+
 ### Features
 
-Describe the example features.
+I kept all of the original features and engineered 6 additional:
 
-Then describe the features you used to predict your target.
+petal_ratio: petal_length / petal_width
+sepal_ratio: sepal_length / sepal_width
+petal_to_sepal_ratio: petal_length / sepal_length
+petal_diff: petal_length - petal_width
+petal_area: petal_length * petal_width
+petal_size: a size class for petal_length All of the new features were created to help provide additional information about flower size, shape or proportion.
 
-Explain what you changed, added, removed, or kept and why.
+I wanted to focus on more of the petal features as previous experience with this dataset shows the petal features are stronger possible predictors for species.
 
 ### Evaluation and Results
 
