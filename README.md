@@ -26,6 +26,8 @@ See [docs/your-files.md] for more.
 Links:
 
 - [ml_03_case.ipynb](notebooks/ml_03_case.ipynb)
+- [ml_03_tmartin2.ipynb](notebooks/ml_03_tmartin2.ipynb)
+- [ml_03_tmartin_iris.ipynb](notebooks/ml_03_tmartin_iris.ipynb)
 
 ## Working Files
 
