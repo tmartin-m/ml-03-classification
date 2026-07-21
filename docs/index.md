@@ -95,4 +95,4 @@ My next steps would be seeing if I could find a larger dataset to test the model
 
 These skills could be applied in a real worldseeting to determine if a patient is at a low, medium or high risk of a certain disease based on specific features like age, gender, prior illness, etc. The only downside is where model was good enough the risk of confusion and the less than perfect accuracy would be much less acceptable in this example.
 
-![Dual Axis](docs/images/dualaxis.png)
+![Dual Axis](docs/dualaxis.png)
