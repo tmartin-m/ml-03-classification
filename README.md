@@ -166,26 +166,31 @@ Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 ## Findings and Visuals
 
-Take screenshots of your charts and provide them here with a discussion.
-In Markdown, display a figure by using:
-an exclamation mark immediately followed by square brackets containing a useful caption
-immediately followed by parentheses containing the relative path to your figure.
-Note: When you start typing the path with a dot (.) for "here, in this directory",
-the IDE may help complete the path.
+### Phase 4. Technical Modification
 
-In your custom project, follow this example, but
+I added an overall F1 Score, Precision score and Recall Score to be able to compare to accuracy and to the per species scores in the produced chart. I was able to run the cell successfully in the notebook and produced logged lines in the project.log
 
-- your figures and narrative should reflect your work,
-- this `README.md` should include your commands, process, and visuals, and
-- `docs/index.md` should include your narrative.
+2026-07-19 17:48:04 | INFO | M03 | Fitting DecisionTreeClassifier(max_depth=3)
+2026-07-19 17:48:04 | INFO | M03 | Test accuracy: 0.967
+2026-07-19 17:48:04 | INFO | M03 | Test F1 Score: 0.967
+2026-07-19 17:48:04 | INFO | M03 | Test Precision: 0.970
+2026-07-19 17:48:04 | INFO | M03 | Test Recall: 0.967
 
-Remove unnecessary instructional comments in your custom files.
+I carried this modification into phase 5 as well.
 
-Update figures to present interesting results from your custom project:
+### Phase 5. Custom Project
 
-![Provide a Useful Caption](./docs/images/Figure_1.png)
 
-![Provide a Useful Caption](./docs/images/Figure_2.png)
+
+In the confusion matrix we can see that both the Setosa and Virginica were classified correctly 100% of the time, while 10% of the Versicolor samples were misclassified as Virginica. THese results make sense based on the scatterplot where the sepal to petal ratios produced similar results for the Versicolor and Virginica species.
+
+![NormalizedCM](normalizedcm.png)
+
+![Sepal vs Petal Ratio](scatter.png)
+
+For the max_depth, I would choose 3. The dual axis chart shows test accuracy peaking at about 96.7% using fewer nodes than deeper trees. If we increase the depth we also increase the complexity without improving the test accuracy. The training accuracy does continue to improve as the depth increases but that could also be raising the risk of overfitting.
+
+![Dual Axis](dualaxis.png)
 
 ## Project Documentation
 

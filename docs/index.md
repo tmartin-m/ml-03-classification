@@ -21,23 +21,24 @@ to get the example projects running on your machine.
 
 ## Phase 4. Technical Modification
 
-Describe your small technical modification to the example project.
+I added an overall F1 Score, Precision score and Recall Score to be able to compare to accuracy and to the per species scores in the produced chart. Originally I also added code to try and save the confusion matrix but had caused quite a few errors I couldn't correct so I deleted my first notebook, started over and just tried to add the additional metrics.
 
-Include:
+I was able to run the cell successfully in the notebook and produced logged lines in the project.log
 
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
+2026-07-19 17:48:04 | INFO | M03 | Fitting DecisionTreeClassifier(max_depth=3)
+2026-07-19 17:48:04 | INFO | M03 | Test accuracy: 0.967
+2026-07-19 17:48:04 | INFO | M03 | Test F1 Score: 0.967
+2026-07-19 17:48:04 | INFO | M03 | Test Precision: 0.970
+2026-07-19 17:48:04 | INFO | M03 | Test Recall: 0.967
 
-Compared with the example project,
-explain what is different and why the change matters.
+I would say the modification was easy. I was able to review the test accuracy code in section 5 and add the other metric options we learned about earlier in this model.
 
-Was it easy, or surprisingly challenging and why do you think so?
 
 ## Phase 5. Custom Project
 
 I chose to use the Iris dataset for my custom project. Having worked with this specific set several times I was familar with the original features and wanted to be able to build upon my work from the last module.
+
+I kept the metrics I added to the example project; added back in the engineered features from Module 2 adding in a scatterplot to compare the sepal to petal ratios to see if the species produced similar results. Then I added a normalized confusion matrix and a bar chart for feature importance. The final addition was a dual axis line chart to compare the accuracy to model complexity.
 
 ### Basis and Data
 
@@ -53,15 +54,7 @@ The project is a supervised machine learning problem because of the chosen targe
 
 ### Target
 
-Describe the example target variable.
-
-Then describe your chosen target variable.
-
-Explain how your target choice changes the modeling approach, interpretation, or evaluation.
-
-My custom project target feature was species, a discrete category resulting in classification problem.
-
-
+The example target variable was species, a discrete category resulting in a classification problem. My custom project target feature was species, a discrete category resulting in classification problem. The modeling approach, interpretation and evaluation can be similar between the 2 Seaborn datasets.
 
 ### Features
 
@@ -78,25 +71,28 @@ I wanted to focus on more of the petal features as previous experience with this
 
 ### Evaluation and Results
 
-Describe how you evaluated your model.
+The most important metric in the notebook is test accuracy. It measures how well the model performs on unseen data. A classification mistakes means that the model is predicting the wrong iris species so the test performance is a better indicator of how useful the model could serve tobe in a real world scenerio.
 
-Include:
+In the confusion matrix we can see that both the Setosa and Virginica were classified correctly 100% of the time, while 10% of the Versicolor samples were misclassified as Virginica. THese results make sense based on the scatterplot where the sepal to petal ratios produced similar results for the Versicolor and Virginica species.
 
-- The metric or evidence you used
-- The main result
-- Whether the result was useful, interesting, surprising, or disappointing
-- Any weakness, limitation, or next improvement
+For the max_depth, I would choose 3. The dual axis chart shows test accuracy peaking at about 96.7% using fewer nodes than deeper trees. If we increase the depth we also increase the complexity without improving the test accuracy. The training accuracy does continue to improve as the depth increases but that could also be raising the risk of overfitting.
+
+Yes, the model is good enough for simple species identification with a almost 97% accuracy and only a small amount of confusion in one species.
+
+My next steps would be seeing if I could find a larger dataset to test the model against, seeing if there is other features that be engineered that would better determine the classification between the Virginica and Versicolor, or a closer evaluation of the performance metrics within each class.
 
 ### Summary
 
-Summarize your custom project.
+For my custom project I used the Iris dataset originally containing 5 features and 150 instances to begin building to a supervised classification model that predicts the flower species.
 
-Include:
+I implemented feature engineering by creating new variables that help describe the flower size and proportions, including petal ratio, sepal ratio, petal to sepal ratio, petal difference, petal area and petal size.
 
-- How you implemented your custom model
-- What results you got
-- What you learned
-- How well you exercised the skills covered in this project
-- What kinds of real problems you could apply these skills to in the future
+The most important metric in the notebook is test accuracy.
 
-Display at least one image or screenshot showing your work.
+In the confusion matrix we can see that both the Setosa and Virginica were classified correctly 100% of the time, while 10% of the Versicolor samples were misclassified as Virginica. The ideal max depth is 3 with test accuracy peaking at about 96.7%
+
+My next steps would be seeing if I could find a larger dataset to test the model against or further features or evaluation to eliminate some of the confusion within the species.
+
+These skills could be applied in a real worldseeting to determine if a patient is at a low, medium or high risk of a certain disease based on specific features like age, gender, prior illness, etc. The only downside is where model was good enough the risk of confusion and the less than perfect accuracy would be much less acceptable in this example.
+
+![Dual Axis](dualaxis.png)
